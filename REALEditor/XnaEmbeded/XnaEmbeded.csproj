@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6A3BE1B1-12CC-44CD-8C7E-5FF89E7F9819}</ProjectGuid>
+    <ProjectGuid>{4A1E9C63-72AB-4340-8BD2-21BF380E888A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RealEditorCustomControls</RootNamespace>
-    <AssemblyName>RealEditorCustomControls</AssemblyName>
+    <RootNamespace>XnaEmbeded</RootNamespace>
+    <AssemblyName>XnaEmbeded</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,66 +30,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.4.0.456, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MonoGame.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EditorPanel.cs">
+    <Compile Include="GraphicsDeviceControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="EditorPanel.Designer.cs">
-      <DependentUpon>EditorPanel.cs</DependentUpon>
-    </Compile>
+    <Compile Include="GraphicsDeviceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RealButton.cs">
+    <Compile Include="ServiceContainer.cs" />
+    <Compile Include="SpriteFontControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RealButton.Designer.cs">
-      <DependentUpon>RealButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RealColorTable.cs" />
-    <Compile Include="RealMenuStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RealMenuStrip.Designer.cs">
-      <DependentUpon>RealMenuStrip.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RealLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RealLabel.Designer.cs">
-      <DependentUpon>RealLabel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RealTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RealTextBox.Designer.cs">
-      <DependentUpon>RealTextBox.cs</DependentUpon>
-    </Compile>
-    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RealEditor.Common\RealEditor.Common.csproj">
-      <Project>{cb087976-53e6-420c-a57b-eb471742190b}</Project>
-      <Name>RealEditor.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XnaEmbededControls\XnaEmbededControls.csproj">
-      <Project>{1dbcc920-9e40-4370-bdf6-58467e8f3f99}</Project>
-      <Name>XnaEmbededControls</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="RealTextBox.resx">
-      <DependentUpon>RealTextBox.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

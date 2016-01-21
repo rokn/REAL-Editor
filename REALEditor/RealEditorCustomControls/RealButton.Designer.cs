@@ -1,6 +1,6 @@
 ﻿namespace RealEditorCustomControls
 {
-	partial class RealTextBox
+	sealed partial class RealButton
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,9 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SuspendLayout();
-			this.ResumeLayout(false);
-
+			components = new System.ComponentModel.Container();
 		}
 
 		#endregion

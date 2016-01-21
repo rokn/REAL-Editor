@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using RealEditor.Common;
+using RealEditorCustomControls;
+using REALEditor.Properties;
+using XnaEmbededControls;
 
 namespace REALEditor
 {
-	public partial class MainWindow : Form
+	public partial class MainForm : Form
 	{
-		public MainWindow()
+		public MainForm()
 		{
 			InitializeComponent();
 			this.WindowState = FormWindowState.Maximized;
@@ -14,31 +18,14 @@ namespace REALEditor
 
 		protected override void OnPaint(PaintEventArgs e)
 		{
-//			LinearGradientBrush linGrBrush = new LinearGradientBrush(
-//			   new Point(0, 0),
-//			   new Point(0, BorderSize),
-//			   Color.FromArgb(0, 0, 0, 0),   // Opaque red
-//			   Color.FromArgb(255, 80, 80, 255));
-//			Brush borderColor = new SolidBrush(Color.FromArgb(255, 80,80,255));
-//			e.Graphics.FillRectangle(linGrBrush, TopBorder);
-//			e.Graphics.FillRectangle(borderColor, LeftBorder);
-//			e.Graphics.FillRectangle(borderColor, RightBorder);
-//			e.Graphics.FillRectangle(borderColor, BottomBorder);
 		}
 
 		private void MainWindow_Load(object sender, System.EventArgs e)
 		{
 			this.BackColor = Configuration.DefaultFormBackgroundColor;
-		}
-
-		private void AltMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-		{
-
-		}
-
-		private void fileStripNewProject_Click(object sender, EventArgs e)
-		{
-			OpenNewProjectForm();
+			menuStrip1.BackColor = Configuration.DefaultMenuBackgroundColor;
+			menuStrip1.ForeColor = Configuration.DefaultTextColor;
+			menuStrip1.Renderer = new MyRenderer(new RealColorTable());
 		}
 
 		private void OpenNewProjectForm()
@@ -47,7 +34,24 @@ namespace REALEditor
 			newProject.ShowDialog();
 		}
 
-		private void fileStripExit_Click(object sender, EventArgs e)
+		private void OpenProject(string filename)
+		{
+			//TODO ProjectOpening
+		}
+
+		private void NewProjectMenuItemClick(object sender, EventArgs e)
+		{
+			OpenNewProjectForm();
+		}
+
+		private void OpenProjectMenuItemClick(object sender, EventArgs e)
+		{
+			var fileDialog = new OpenFileDialog { Filter = Resources.RealProjectFilter };
+			fileDialog.ShowDialog();
+			OpenProject(fileDialog.FileName);
+		}
+
+		private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
