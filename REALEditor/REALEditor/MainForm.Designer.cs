@@ -42,7 +42,8 @@ namespace REALEditor
 			this.openProjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-			this.editorPanel1 = new RealEditorCustomControls.EditorPanel();
+			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.runGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this._realMenu1.SuspendLayout();
 			this.SuspendLayout();
@@ -51,6 +52,7 @@ namespace REALEditor
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.runToolStripMenuItem,
             this.helpToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
@@ -87,7 +89,7 @@ namespace REALEditor
 			this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
 			this.exitToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
 			this.exitToolStripMenuItem1.Text = "Exit";
-			this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+			this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitMenuItemClick);
 			// 
 			// helpToolStripMenuItem
 			// 
@@ -147,14 +149,20 @@ namespace REALEditor
 			this.helpToolStripMenuItem2.Size = new System.Drawing.Size(44, 44);
 			this.helpToolStripMenuItem2.Text = "Help";
 			// 
-			// editorPanel1
+			// runToolStripMenuItem
 			// 
-			this.editorPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.editorPanel1.Location = new System.Drawing.Point(0, 24);
-			this.editorPanel1.Name = "editorPanel1";
-			this.editorPanel1.Padding = new System.Windows.Forms.Padding(5);
-			this.editorPanel1.Size = new System.Drawing.Size(620, 430);
-			this.editorPanel1.TabIndex = 2;
+			this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.runGameToolStripMenuItem});
+			this.runToolStripMenuItem.Name = "runToolStripMenuItem";
+			this.runToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+			this.runToolStripMenuItem.Text = "Run";
+			// 
+			// runGameToolStripMenuItem
+			// 
+			this.runGameToolStripMenuItem.Name = "runGameToolStripMenuItem";
+			this.runGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.runGameToolStripMenuItem.Text = "Run Game";
+			this.runGameToolStripMenuItem.Click += new System.EventHandler(this.RunGameMenuItemClick);
 			// 
 			// MainForm
 			// 
@@ -162,7 +170,6 @@ namespace REALEditor
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(620, 454);
-			this.Controls.Add(this.editorPanel1);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "MainForm";
@@ -190,7 +197,8 @@ namespace REALEditor
 		private ToolStripMenuItem openProjectToolStripMenuItem;
 		private ToolStripMenuItem exitToolStripMenuItem1;
 		private ToolStripMenuItem helpToolStripMenuItem;
-		private RealEditorCustomControls.EditorPanel editorPanel1;
+		private ToolStripMenuItem runToolStripMenuItem;
+		private ToolStripMenuItem runGameToolStripMenuItem;
 	}
 }
 

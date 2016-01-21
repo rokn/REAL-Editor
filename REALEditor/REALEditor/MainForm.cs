@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using RealEditor.Common;
 using RealEditorCustomControls;
 using REALEditor.Properties;
-using XnaEmbededControls;
+using REALCore;
 
 namespace REALEditor
 {
@@ -51,9 +51,21 @@ namespace REALEditor
 			OpenProject(fileDialog.FileName);
 		}
 
-		private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+		private void ExitMenuItemClick(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void RunGameMenuItemClick(object sender, EventArgs e)
+		{
+			RunGame();
+		}
+
+		private void RunGame()
+		{
+			var realGame = new REALGame(800,480,false);
+			var gameThread = new Thread(() => realGame.Run());
+			gameThread.Start();
 		}
 	}
 
