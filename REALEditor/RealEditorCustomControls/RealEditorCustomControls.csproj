@@ -48,6 +48,18 @@
     <Compile Include="EditorPanel.Designer.cs">
       <DependentUpon>EditorPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProjectExplorer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectExplorer.Designer.cs">
+      <DependentUpon>ProjectExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectExplorerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectExplorerPanel.Designer.cs">
+      <DependentUpon>ProjectExplorerPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RealButton.cs">
       <SubType>Component</SubType>
@@ -67,6 +79,12 @@
     </Compile>
     <Compile Include="RealLabel.Designer.cs">
       <DependentUpon>RealLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RealPanelBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RealPanelBase.Designer.cs">
+      <DependentUpon>RealPanelBase.cs</DependentUpon>
     </Compile>
     <Compile Include="RealTextBox.cs">
       <SubType>Component</SubType>

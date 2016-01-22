@@ -35,15 +35,16 @@ namespace REALEditor
 			this.newProjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.openProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.runGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.projectExplorerPanel1 = new RealEditorCustomControls.ProjectExplorerPanel();
 			this._realMenu1 = new RealEditorCustomControls.RealMenuStrip();
 			this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openProjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.runGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this._realMenu1.SuspendLayout();
 			this.SuspendLayout();
@@ -91,11 +92,34 @@ namespace REALEditor
 			this.exitToolStripMenuItem1.Text = "Exit";
 			this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitMenuItemClick);
 			// 
+			// runToolStripMenuItem
+			// 
+			this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.runGameToolStripMenuItem});
+			this.runToolStripMenuItem.Name = "runToolStripMenuItem";
+			this.runToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+			this.runToolStripMenuItem.Text = "Run";
+			// 
+			// runGameToolStripMenuItem
+			// 
+			this.runGameToolStripMenuItem.Name = "runGameToolStripMenuItem";
+			this.runGameToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+			this.runGameToolStripMenuItem.Text = "Run Game";
+			this.runGameToolStripMenuItem.Click += new System.EventHandler(this.RunGameMenuItemClick);
+			// 
 			// helpToolStripMenuItem
 			// 
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.helpToolStripMenuItem.Text = "Help";
+			// 
+			// projectExplorerPanel1
+			// 
+			this.projectExplorerPanel1.Location = new System.Drawing.Point(12, 27);
+			this.projectExplorerPanel1.Name = "projectExplorerPanel1";
+			this.projectExplorerPanel1.Padding = new System.Windows.Forms.Padding(5);
+			this.projectExplorerPanel1.Size = new System.Drawing.Size(284, 285);
+			this.projectExplorerPanel1.TabIndex = 2;
 			// 
 			// _realMenu1
 			// 
@@ -149,27 +173,13 @@ namespace REALEditor
 			this.helpToolStripMenuItem2.Size = new System.Drawing.Size(44, 44);
 			this.helpToolStripMenuItem2.Text = "Help";
 			// 
-			// runToolStripMenuItem
-			// 
-			this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.runGameToolStripMenuItem});
-			this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-			this.runToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-			this.runToolStripMenuItem.Text = "Run";
-			// 
-			// runGameToolStripMenuItem
-			// 
-			this.runGameToolStripMenuItem.Name = "runGameToolStripMenuItem";
-			this.runGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.runGameToolStripMenuItem.Text = "Run Game";
-			this.runGameToolStripMenuItem.Click += new System.EventHandler(this.RunGameMenuItemClick);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(620, 454);
+			this.Controls.Add(this.projectExplorerPanel1);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "MainForm";
@@ -199,6 +209,7 @@ namespace REALEditor
 		private ToolStripMenuItem helpToolStripMenuItem;
 		private ToolStripMenuItem runToolStripMenuItem;
 		private ToolStripMenuItem runGameToolStripMenuItem;
+		private RealEditorCustomControls.ProjectExplorerPanel projectExplorerPanel1;
 	}
 }
 
