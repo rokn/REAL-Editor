@@ -30,148 +30,82 @@ namespace REALEditor
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.realMenuStrip1 = new RealEditorCustomControls.RealMenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.newProjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.runGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.projectExplorerPanel1 = new RealEditorCustomControls.ProjectExplorerPanel();
-			this._realMenu1 = new RealEditorCustomControls.RealMenuStrip();
-			this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.openProjectToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.helpToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuStrip1.SuspendLayout();
-			this._realMenu1.SuspendLayout();
+			this.realMenuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// menuStrip1
+			// realMenuStrip1
 			// 
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.realMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+			this.realMenuStrip1.ForeColor = System.Drawing.Color.White;
+			this.realMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.runToolStripMenuItem,
             this.helpToolStripMenuItem});
-			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(620, 24);
-			this.menuStrip1.TabIndex = 1;
-			this.menuStrip1.Text = "menuStrip1";
+			this.realMenuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.realMenuStrip1.Name = "realMenuStrip1";
+			this.realMenuStrip1.Size = new System.Drawing.Size(620, 24);
+			this.realMenuStrip1.TabIndex = 0;
+			this.realMenuStrip1.Text = "realMenuStrip1";
 			// 
 			// fileToolStripMenuItem
 			// 
+			this.fileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newProjectToolStripMenuItem1,
+            this.newProjectToolStripMenuItem,
             this.openProjectToolStripMenuItem,
             this.exitToolStripMenuItem1});
+			this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "File";
 			// 
-			// newProjectToolStripMenuItem1
+			// newProjectToolStripMenuItem
 			// 
-			this.newProjectToolStripMenuItem1.Name = "newProjectToolStripMenuItem1";
-			this.newProjectToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
-			this.newProjectToolStripMenuItem1.Text = "New Project";
-			this.newProjectToolStripMenuItem1.Click += new System.EventHandler(this.NewProjectMenuItemClick);
+			this.newProjectToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
+			this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+			this.newProjectToolStripMenuItem.Text = "New Project";
+			this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProjectMenuItemClick);
 			// 
 			// openProjectToolStripMenuItem
 			// 
+			this.openProjectToolStripMenuItem.ForeColor = System.Drawing.Color.White;
 			this.openProjectToolStripMenuItem.Name = "openProjectToolStripMenuItem";
-			this.openProjectToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+			this.openProjectToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
 			this.openProjectToolStripMenuItem.Text = "Open Project";
 			this.openProjectToolStripMenuItem.Click += new System.EventHandler(this.OpenProjectMenuItemClick);
 			// 
 			// exitToolStripMenuItem1
 			// 
+			this.exitToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
 			this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-			this.exitToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+			this.exitToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
 			this.exitToolStripMenuItem1.Text = "Exit";
 			this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitMenuItemClick);
 			// 
 			// runToolStripMenuItem
 			// 
-			this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.runGameToolStripMenuItem});
+			this.runToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+			this.runToolStripMenuItem.ForeColor = System.Drawing.Color.White;
 			this.runToolStripMenuItem.Name = "runToolStripMenuItem";
 			this.runToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
 			this.runToolStripMenuItem.Text = "Run";
-			// 
-			// runGameToolStripMenuItem
-			// 
-			this.runGameToolStripMenuItem.Name = "runGameToolStripMenuItem";
-			this.runGameToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
-			this.runGameToolStripMenuItem.Text = "Run Game";
-			this.runGameToolStripMenuItem.Click += new System.EventHandler(this.RunGameMenuItemClick);
+			this.runToolStripMenuItem.Click += new System.EventHandler(this.RunGameMenuItemClick);
 			// 
 			// helpToolStripMenuItem
 			// 
+			this.helpToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+			this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.helpToolStripMenuItem.Text = "Help";
-			// 
-			// projectExplorerPanel1
-			// 
-			this.projectExplorerPanel1.Location = new System.Drawing.Point(12, 27);
-			this.projectExplorerPanel1.Name = "projectExplorerPanel1";
-			this.projectExplorerPanel1.Padding = new System.Windows.Forms.Padding(5);
-			this.projectExplorerPanel1.Size = new System.Drawing.Size(284, 285);
-			this.projectExplorerPanel1.TabIndex = 2;
-			// 
-			// _realMenu1
-			// 
-			this._realMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-			this._realMenu1.ForeColor = System.Drawing.Color.White;
-			this._realMenu1.GripMargin = new System.Windows.Forms.Padding(2);
-			this._realMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem1,
-            this.helpToolStripMenuItem2});
-			this._realMenu1.Location = new System.Drawing.Point(0, 0);
-			this._realMenu1.Name = "_realMenu1";
-			this._realMenu1.Size = new System.Drawing.Size(100, 48);
-			this._realMenu1.TabIndex = 0;
-			this._realMenu1.Text = "_realMenu1";
-			// 
-			// fileToolStripMenuItem1
-			// 
-			this.fileToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-			this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newProjectToolStripMenuItem,
-            this.openProjectToolStripMenuItem1,
-            this.exitToolStripMenuItem});
-			this.fileToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-			this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-			this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 44);
-			this.fileToolStripMenuItem1.Text = "File";
-			// 
-			// newProjectToolStripMenuItem
-			// 
-			this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-			this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-			this.newProjectToolStripMenuItem.Text = "New Project";
-			// 
-			// openProjectToolStripMenuItem1
-			// 
-			this.openProjectToolStripMenuItem1.Name = "openProjectToolStripMenuItem1";
-			this.openProjectToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
-			this.openProjectToolStripMenuItem1.Text = "Open Project";
-			// 
-			// exitToolStripMenuItem
-			// 
-			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-			this.exitToolStripMenuItem.Text = "Exit";
-			// 
-			// helpToolStripMenuItem2
-			// 
-			this.helpToolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-			this.helpToolStripMenuItem2.ForeColor = System.Drawing.Color.White;
-			this.helpToolStripMenuItem2.Name = "helpToolStripMenuItem2";
-			this.helpToolStripMenuItem2.Size = new System.Drawing.Size(44, 44);
-			this.helpToolStripMenuItem2.Text = "Help";
 			// 
 			// MainForm
 			// 
@@ -179,37 +113,25 @@ namespace REALEditor
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(620, 454);
-			this.Controls.Add(this.projectExplorerPanel1);
-			this.Controls.Add(this.menuStrip1);
-			this.MainMenuStrip = this.menuStrip1;
+			this.Controls.Add(this.realMenuStrip1);
 			this.Name = "MainForm";
 			this.Text = "REALEditor";
 			this.Load += new System.EventHandler(this.MainWindow_Load);
-			this.menuStrip1.ResumeLayout(false);
-			this.menuStrip1.PerformLayout();
-			this._realMenu1.ResumeLayout(false);
-			this._realMenu1.PerformLayout();
+			this.realMenuStrip1.ResumeLayout(false);
+			this.realMenuStrip1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-		private RealEditorCustomControls.RealMenuStrip _realMenu1;
-		private ToolStripMenuItem fileToolStripMenuItem1;
-		private ToolStripMenuItem helpToolStripMenuItem2;
-		private ToolStripMenuItem newProjectToolStripMenuItem;
-		private ToolStripMenuItem openProjectToolStripMenuItem1;
-		private ToolStripMenuItem exitToolStripMenuItem;
-		private MenuStrip menuStrip1;
 		private ToolStripMenuItem fileToolStripMenuItem;
-		private ToolStripMenuItem newProjectToolStripMenuItem1;
+		private ToolStripMenuItem newProjectToolStripMenuItem;
 		private ToolStripMenuItem openProjectToolStripMenuItem;
 		private ToolStripMenuItem exitToolStripMenuItem1;
-		private ToolStripMenuItem helpToolStripMenuItem;
 		private ToolStripMenuItem runToolStripMenuItem;
-		private ToolStripMenuItem runGameToolStripMenuItem;
-		private RealEditorCustomControls.ProjectExplorerPanel projectExplorerPanel1;
+		private ToolStripMenuItem helpToolStripMenuItem;
+		private RealEditorCustomControls.RealMenuStrip realMenuStrip1;
 	}
 }
 

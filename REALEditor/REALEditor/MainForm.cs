@@ -15,7 +15,7 @@ namespace REALEditor
 		{
 			InitializeComponent();
 			this.WindowState = FormWindowState.Maximized;
-			projectExplorerPanel1.ProjectExplorer.ShowProjectFolder(new DirectoryInfo(@"F:\Games\BioShock Infinite"));
+//			projectExplorerPanel1.ProjectExplorer.ShowProjectFolder(new DirectoryInfo(@"F:\Games\BioShock Infinite"));
 		}
 
 		protected override void OnPaint(PaintEventArgs e)
@@ -25,9 +25,6 @@ namespace REALEditor
 		private void MainWindow_Load(object sender, System.EventArgs e)
 		{
 			this.BackColor = Configuration.DefaultFormBackgroundColor;
-			menuStrip1.BackColor = Configuration.DefaultMenuBackgroundColor;
-			menuStrip1.ForeColor = Configuration.DefaultTextColor;
-			menuStrip1.Renderer = new MyRenderer(new RealColorTable());
 		}
 
 		private void OpenNewProjectForm()
@@ -39,6 +36,13 @@ namespace REALEditor
 		private void OpenProject(string filename)
 		{
 			//TODO ProjectOpening
+		}
+
+		private void RunGame()
+		{
+			var realGame = new REALGame(800,480,false);
+			var gameThread = new Thread(() => realGame.Run());
+			gameThread.Start();
 		}
 
 		private void NewProjectMenuItemClick(object sender, EventArgs e)
@@ -61,13 +65,6 @@ namespace REALEditor
 		private void RunGameMenuItemClick(object sender, EventArgs e)
 		{
 			RunGame();
-		}
-
-		private void RunGame()
-		{
-			var realGame = new REALGame(800,480,false);
-			var gameThread = new Thread(() => realGame.Run());
-			gameThread.Start();
 		}
 	}
 

@@ -43,10 +43,10 @@ namespace RealEditorCustomControls
 
 		protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
 		{
-			foreach (ToolStripMenuItem menuItem in e.ToolStrip.Items)
+			foreach (var currItem in e.ToolStrip.Items.OfType<ToolStripMenuItem>())
 			{
-				((ToolStripDropDownMenu) menuItem.DropDown).ShowImageMargin = false;
-				menuItem.ForeColor = Configuration.DefaultTextColor;
+				((ToolStripDropDownMenu) currItem.DropDown).ShowImageMargin = false;
+				currItem.ForeColor = Configuration.DefaultTextColor;
 			}
 			Rectangle rc = new Rectangle(Point.Empty, e.ToolStrip.Size);
 			e.Graphics.FillRectangle(new SolidBrush(Configuration.DefaultMenuBackgroundColor), rc);

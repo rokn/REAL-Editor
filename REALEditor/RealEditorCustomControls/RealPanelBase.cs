@@ -2,7 +2,7 @@
 
 namespace RealEditorCustomControls
 {
-	public abstract partial class RealPanelBase : Panel
+	public partial class RealPanelBase : Panel
 	{
 		protected RealPanelBase()
 		{

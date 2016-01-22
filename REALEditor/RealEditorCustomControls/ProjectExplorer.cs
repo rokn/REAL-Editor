@@ -5,9 +5,9 @@ using RealEditor.Common;
 
 namespace RealEditorCustomControls
 {
-	public partial class ProjectExplorer : TreeView
+	public sealed partial class ProjectExplorer : TreeView
 	{
-		public ProjectExplorer()
+		internal ProjectExplorer()
 		{
 			InitializeComponent();
 			ForeColor = Configuration.DefaultTextColor;
@@ -81,20 +81,18 @@ namespace RealEditorCustomControls
 		private Rectangle NodeBounds(TreeNode node)
 		{
 			// Set the return value to the normal node bounds.
-			Rectangle bounds = node.Bounds;
-			if(node.Tag != null)
-			{
-				// Retrieve a Graphics object from the TreeView handle
-				// and use it to calculate the display width of the tag.
-				Graphics g = FindForm()?.CreateGraphics();
-				int tagWidth = (int)g.MeasureString
-					(node.Tag.ToString(), Font).Width + 6;
+			var bounds = node.Bounds;
+			if (node.Tag == null) return bounds;
+			// Retrieve a Graphics object from the TreeView handle
+			// and use it to calculate the display width of the tag.
+			var g = FindForm()?.CreateGraphics();
+			var tagWidth = (int)g.MeasureString
+				(node.Tag.ToString(), Font).Width + 6;
 
-				// Adjust the node bounds using the calculated value.
-				bounds.Offset(tagWidth / 2, 0);
-				bounds = Rectangle.Inflate(bounds, tagWidth / 2, 0);
-				g.Dispose();
-			}
+			// Adjust the node bounds using the calculated value.
+			bounds.Offset(tagWidth / 2, 0);
+			bounds = Rectangle.Inflate(bounds, tagWidth / 2, 0);
+			g.Dispose();
 
 			return bounds;
 

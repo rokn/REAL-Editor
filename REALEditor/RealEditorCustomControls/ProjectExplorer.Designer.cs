@@ -1,6 +1,6 @@
 ﻿namespace RealEditorCustomControls
 {
-	partial class ProjectExplorer
+	sealed partial class ProjectExplorer
 	{
 		/// <summary>
 		/// Required designer variable.

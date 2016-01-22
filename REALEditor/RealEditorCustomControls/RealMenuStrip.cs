@@ -9,10 +9,10 @@ namespace RealEditorCustomControls
 		public RealMenuStrip()
 		{
 			InitializeComponent();
-			BackColor = Configuration.DefaultMenuBackgroundColor;
-			ForeColor = Configuration.DefaultTextColor;
+			this.BackColor = Configuration.DefaultMenuBackgroundColor;
+			this.ForeColor = Configuration.DefaultTextColor;
+			this.Renderer = new MyRenderer(new RealColorTable());
 			ItemAdded += OnItemAdded;
-			Renderer = new ToolStripProfessionalRenderer(new RealColorTable());
 		}
 
 		private void OnItemAdded(object sender, ToolStripItemEventArgs e)
