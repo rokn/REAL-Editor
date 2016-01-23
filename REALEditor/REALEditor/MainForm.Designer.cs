@@ -37,6 +37,7 @@ namespace REALEditor
 			this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.projectExplorerPanel1 = new RealEditorCustomControls.ProjectExplorerPanel();
 			this.realMenuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -107,15 +108,26 @@ namespace REALEditor
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.helpToolStripMenuItem.Text = "Help";
 			// 
+			// projectExplorerPanel1
+			// 
+			this.projectExplorerPanel1.Location = new System.Drawing.Point(304, 154);
+			this.projectExplorerPanel1.MinimumSize = new System.Drawing.Size(150, 200);
+			this.projectExplorerPanel1.Name = "projectExplorerPanel1";
+			this.projectExplorerPanel1.Padding = new System.Windows.Forms.Padding(5);
+			this.projectExplorerPanel1.Size = new System.Drawing.Size(200, 200);
+			this.projectExplorerPanel1.TabIndex = 1;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(620, 454);
+			this.Controls.Add(this.projectExplorerPanel1);
 			this.Controls.Add(this.realMenuStrip1);
 			this.Name = "MainForm";
 			this.Text = "REALEditor";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.MainWindow_Load);
 			this.realMenuStrip1.ResumeLayout(false);
 			this.realMenuStrip1.PerformLayout();
@@ -132,6 +144,7 @@ namespace REALEditor
 		private ToolStripMenuItem runToolStripMenuItem;
 		private ToolStripMenuItem helpToolStripMenuItem;
 		private RealEditorCustomControls.RealMenuStrip realMenuStrip1;
+		private RealEditorCustomControls.ProjectExplorerPanel projectExplorerPanel1;
 	}
 }
 

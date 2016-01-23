@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
@@ -14,8 +15,6 @@ namespace REALEditor
 		public MainForm()
 		{
 			InitializeComponent();
-			this.WindowState = FormWindowState.Maximized;
-//			projectExplorerPanel1.ProjectExplorer.ShowProjectFolder(new DirectoryInfo(@"F:\Games\BioShock Infinite"));
 		}
 
 		protected override void OnPaint(PaintEventArgs e)

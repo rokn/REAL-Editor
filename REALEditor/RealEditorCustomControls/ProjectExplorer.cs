@@ -2,6 +2,8 @@
 using System.IO;
 using System.Windows.Forms;
 using RealEditor.Common;
+using RealEditorCustomControls.Properties;
+using REALProjectManagement;
 
 namespace RealEditorCustomControls
 {
@@ -15,6 +17,9 @@ namespace RealEditorCustomControls
 			this.HideSelection = true;
 			this.DrawMode = TreeViewDrawMode.OwnerDrawText;
 			this.DrawNode += OnDrawNode;
+			this.ImageIndex = 0;
+			this.ImageList = new ImageList();
+			this.ImageList.Images.Add(Resources.FolderIcon);
 		}
 
 		private void OnDrawNode(object sender, DrawTreeNodeEventArgs e)
@@ -52,12 +57,14 @@ namespace RealEditorCustomControls
 //			}
 		}
 
-		public void ShowProjectFolder(DirectoryInfo dirInfo)
+		public void OpenProject(string projectFilePath)
 		{
-			if(!dirInfo.Exists)
-				throw new DirectoryNotFoundException();
+			if(!File.Exists(projectFilePath))
+				throw new FileNotFoundException();
 			this.Nodes.Clear();
-			AddFolder(null,dirInfo);
+			IProject project;
+//			project.Load(projectFilePath);
+//			AddFolder(null,dirInfo);
 		}
 
 		public void AddFolder(TreeNode attachTo, DirectoryInfo dirInfo)
@@ -86,13 +93,16 @@ namespace RealEditorCustomControls
 			// Retrieve a Graphics object from the TreeView handle
 			// and use it to calculate the display width of the tag.
 			var g = FindForm()?.CreateGraphics();
-			var tagWidth = (int)g.MeasureString
-				(node.Tag.ToString(), Font).Width + 6;
+			if (g != null)
+			{
+				var tagWidth = (int)g.MeasureString
+					(node.Tag.ToString(), Font).Width + 6;
 
-			// Adjust the node bounds using the calculated value.
-			bounds.Offset(tagWidth / 2, 0);
-			bounds = Rectangle.Inflate(bounds, tagWidth / 2, 0);
-			g.Dispose();
+				// Adjust the node bounds using the calculated value.
+				bounds.Offset(tagWidth / 2, 0);
+				bounds = Rectangle.Inflate(bounds, tagWidth / 2, 0);
+				g.Dispose();
+			}
 
 			return bounds;
 
