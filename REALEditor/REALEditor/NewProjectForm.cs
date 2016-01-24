@@ -2,11 +2,14 @@
 using System.IO;
 using System.Windows.Forms;
 using RealEditor.Common;
+using REALProjectManagement;
 
 namespace REALEditor
 {
 	public partial class NewProjectForm : Form
 	{
+		public RealProject CreatedProject { get; private set; }
+
 		public NewProjectForm()
 		{
 			InitializeComponent();
@@ -53,6 +56,9 @@ namespace REALEditor
 					return false;
 				}
 			}
+
+			CreatedProject = new RealProject(name);
+			CreatedProject.SaveAs(Path.Combine(directory, name, name + ".realproj"));
 
 			return true;
 		}

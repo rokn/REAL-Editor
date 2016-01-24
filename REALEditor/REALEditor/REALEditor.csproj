@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>REALEditor</RootNamespace>
-    <AssemblyName>REALEditor</AssemblyName>
+    <AssemblyName>◘</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -106,6 +106,10 @@
     <ProjectReference Include="..\RealEditorCustomControls\RealEditorCustomControls.csproj">
       <Project>{6a3be1b1-12cc-44cd-8c7e-5ff89e7f9819}</Project>
       <Name>RealEditorCustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\REALProjectManagement\REALProjectManagement.csproj">
+      <Project>{59144e38-ad7b-42e3-9a2a-57474c014176}</Project>
+      <Name>REALProjectManagement</Name>
     </ProjectReference>
     <ProjectReference Include="..\XnaEmbededControls\XnaEmbededControls.csproj">
       <Project>{1dbcc920-9e40-4370-bdf6-58467e8f3f99}</Project>

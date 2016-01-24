@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using RealEditor.Common;
 using RealEditorCustomControls.Properties;
@@ -9,6 +10,8 @@ namespace RealEditorCustomControls
 {
 	public sealed partial class ProjectExplorer : TreeView
 	{
+		private RealProject _openedProject;
+
 		internal ProjectExplorer()
 		{
 			InitializeComponent();
@@ -20,6 +23,21 @@ namespace RealEditorCustomControls
 			this.ImageIndex = 0;
 			this.ImageList = new ImageList();
 			this.ImageList.Images.Add(Resources.FolderIcon);
+			this.ImageList.Images.Add(Resources.FileIcon);
+			this.NodeMouseDoubleClick += ProjectExplorer_NodeMouseDoubleClick;
+		}
+
+		private void ProjectExplorer_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+		{
+			if (NodeIsFile(e.Node))
+			{
+				_openedProject?.OpenFile(new FileInfo(e.Node.FullPath));
+			}
+		}
+
+		private bool NodeIsFile(TreeNode node)
+		{
+			return node.ImageIndex > 0;
 		}
 
 		private void OnDrawNode(object sender, DrawTreeNodeEventArgs e)
@@ -57,32 +75,48 @@ namespace RealEditorCustomControls
 //			}
 		}
 
-		public void OpenProject(string projectFilePath)
+		public void OpenProject(RealProject project)
 		{
-			if(!File.Exists(projectFilePath))
-				throw new FileNotFoundException();
-			this.Nodes.Clear();
-			IProject project;
-//			project.Load(projectFilePath);
-//			AddFolder(null,dirInfo);
+			_openedProject = project;
+			if(_openedProject != null)
+				RefreshFolder();
 		}
 
 		public void AddFolder(TreeNode attachTo, DirectoryInfo dirInfo)
 		{
+			if (_openedProject == null)
+				return;
+
 			var nodeCollection = attachTo?.Nodes ?? Nodes;
 
 			foreach(var directoryInfo in dirInfo.GetDirectories())
 			{
-				var newNode = new TreeNode(directoryInfo.Name);
+				var newNode = new TreeNode(directoryInfo.Name,0,0);
 
 				nodeCollection.Add(newNode);
 				AddFolder(newNode, directoryInfo);
 			}
 
-			foreach (var fileInfo in dirInfo.GetFiles())
+			foreach (var fileInfo in dirInfo.GetFiles()
+				.Where(_openedProject.ContainsFile))
 			{
-				nodeCollection.Add(new TreeNode(fileInfo.Name));
+				nodeCollection.Add(new TreeNode(fileInfo.Name,1,1));
 			}
+		}
+
+		public void ImportFile(string filePath, string subfolder = "")
+		{
+			if (_openedProject == null) return;
+
+			_openedProject.ImportFile(filePath, subfolder);
+			RefreshFolder();
+		}
+
+		private void RefreshFolder()
+		{
+			this.Nodes.Clear();
+			if(_openedProject?.ProjectPath != null)
+				AddFolder(null, new DirectoryInfo(Path.GetDirectoryName(_openedProject.ProjectPath)));
 		}
 
 		private Rectangle NodeBounds(TreeNode node)

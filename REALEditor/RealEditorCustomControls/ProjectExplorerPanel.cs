@@ -31,9 +31,17 @@ namespace RealEditorCustomControls
 		{
 			_menuStrip = new RealMenuStrip();
 			_importMenuItem = new ToolStripMenuItem("Import");
+			_importMenuItem.Click += ImportMenuItem_Click;
 			_menuStrip.Items.Add(_importMenuItem);
 			_menuStrip.Dock = DockStyle.Top;
 			Controls.Add(_menuStrip);
+		}
+
+		private void ImportMenuItem_Click(object sender, EventArgs e)
+		{
+			var fileDialog = new OpenFileDialog();
+			fileDialog.ShowDialog();
+			ProjectExplorer.ImportFile(fileDialog.FileName, "");
 		}
 
 		private void InitializeProjectExplorer()
